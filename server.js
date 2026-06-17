@@ -50,12 +50,12 @@ app.post("/webhook/saweria", async (req, res) => {
   console.log("[Webhook] Menerima donasi:", JSON.stringify(req.body));
 
   // ✅ FIX: pakai "x-callback-token" bukan "x-saweria-token"
-  if (SAWERIA_TOKEN) {
-    const signature = req.headers["x-callback-token"] || "";
-    if (signature !== SAWERIA_TOKEN) {
-      console.warn("[Webhook] Token tidak valid, request ditolak");
-      console.warn("[Webhook] Headers:", JSON.stringify(req.headers));
-      return res.status(401).json({ error: "Unauthorized" });
+  //if (SAWERIA_TOKEN) {
+  //  const signature = req.headers["x-callback-token"] || "";
+  //  if (signature !== SAWERIA_TOKEN) {
+  //   console.warn("[Webhook] Token tidak valid, request ditolak");
+  //    console.warn("[Webhook] Headers:", JSON.stringify(req.headers));
+  //    return res.status(401).json({ error: "Unauthorized" });
     }
   }
 
